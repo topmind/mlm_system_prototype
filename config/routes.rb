@@ -1,4 +1,11 @@
 MlmSystemPrototype::Application.routes.draw do
+
+  get "commssion/commission-summary"
+
+  get "commssion/members-performance"
+
+  get "commssion/sales"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
