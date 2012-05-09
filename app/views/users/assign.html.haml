@@ -1,0 +1,8 @@
+%p
+	%b Name:
+	= @user.name
+%br
+
+= simple_form_for(@user) do |f|
+	= f.input :products, :collection => Product.all, :label_method => :name, :value_method => :id
+	= f.submit

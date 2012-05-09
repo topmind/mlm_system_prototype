@@ -1,0 +1,44 @@
+%p#notice 
+	= notice
+
+%p
+	%b Name:
+	= @sales_team.name
+%p
+	%b commission_percentage:
+	= @sales_team.commission_percentage
+%p
+	%b commission_amout:
+	= @sales_team.commission_amout
+
+%p
+	%b Owner:
+	= @sales_team.owner
+
+%table
+	%tr
+		%th
+			Name
+		%th
+			Email
+		%th
+		%th
+		%th
+	- @sales_team.users.each do |user|
+		%tr
+			%td 
+				= user.name
+			%td 
+				= user.email
+			%td
+				= link_to 'Show', user
+			%td
+				= link_to 'Edit', edit_user_path(user)
+			%td
+				= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
+
+= link_to 'Edit', edit_sales_team_path(@sales_team)
+|
+= link_to 'Add User', new_sales_team_user_path(@sales_team)
+|
+= link_to 'Back', sales_teams_path

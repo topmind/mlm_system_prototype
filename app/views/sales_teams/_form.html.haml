@@ -1,0 +1,32 @@
+= form_for(@sales_team) do |f|
+  - if @sales_team.errors.any?
+    #error_explanation
+      %h2= pluralize(@sales_team.errors.count, "error")
+      prohibited this sales team from being saved:
+
+      %ul
+      - @sales_team.errors.full_messages.each do |msg|
+        %li= msg
+
+  .field
+    = f.label :name
+    %br
+    = f.text_field :name
+
+  .field
+    = f.label :commission_percentage
+    %br
+    = f.text_field :commission_percentage
+
+  .field
+    = f.label :commission_amout
+    %br
+    = f.text_field :commission_amout
+ 
+  .field
+    = f.label :owner
+    %br
+    = f.text_field :owner
+
+  .actions
+    = f.submit

@@ -1,0 +1,19 @@
+%h1 Listing sales teams
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+  - @sales_teams.each do |sales_team|
+    %tr
+      %td 
+        = sales_team.name
+      %td
+        = link_to 'Show', sales_team
+      %td
+        = link_to 'Edit', edit_sales_team_path(sales_team)
+      %td
+        = link_to 'Destroy', sales_team, confirm: 'Are you sure?', method: :delete
+= link_to 'New Sales Team', new_sales_team_path

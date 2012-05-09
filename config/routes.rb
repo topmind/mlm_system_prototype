@@ -1,10 +1,17 @@
 MlmSystemPrototype::Application.routes.draw do
 
-  get "commssion/commission-summary"
+  resources :sales_teams do
+    resource :users
+  end
 
-  get "commssion/members-performance"
+  get "users/:id/assign" => "users#assign", :as => "assign_user"
 
-  get "commssion/sales"
+  get "users/new.:sales_team_id" => "users#new", :as => "new_sales_team_user"
+
+  resources :users
+
+  resources :products
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,11 +5,7 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "mongoid", "~> 2.4"
-gem "bson_ext", "~> 1.5"
-
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,8 +20,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml'
+gem 'simple_form'
+gem 'mongoid'
+gem 'mongoid-tree', :require => 'mongoid/tree'
 
-gem "twitter-bootstrap-rails"
+gem 'bson_ext'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
